@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PT2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Odd or Even and its Sum</h1>
+<p>Enter <span> 10 </span> integers below:</p>
+<input type="text" id="num1">
+<input type="text" id="num2">
+<input type="text" id="num3">
+<input type="text" id="num4">
+<input type="text" id="num5">
+<input type="text" id="num6">
+<input type="text" id="num7">
+<input type="text" id="num8">
+<input type="text" id="num9">
+<input type="text" id="num10">
+<button onclick="calculate()">Calculate</button>
+<div id="result"></div>
+
+<script>
+function calculate() {
+    let nums = [];
+    let sum = 0;
+    let resultText = "";
+    for (let i = 1; i <= 10; i++) {
+        let num = parseInt(document.getElementById("num" + i).value);
+        nums.push(num);
+        if (num % 2 === 0) {
+            resultText += "<div class='result-line'>" + num + " is even. </div>";
+        } else {
+            resultText += "<div class='result-line'>" + num + " is odd. </div>";
+        }
+        sum += num; 
+    }
+    
+     resultText += "<div class='result-line'>The sum of all numbers is: " + sum + "</div>"; 
+     document.getElementById("result").innerHTML = resultText;
+}
+</script>
+
+</body>
+</html>
